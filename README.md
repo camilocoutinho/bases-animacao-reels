@@ -17,7 +17,9 @@ O efeito de vídeo falado vem de uma skill gratuita, mantida nos repositórios d
 
 ## Como usar
 
-Baixe a pasta para o seu computador. No GitHub, use o botão verde **Code** e depois **Download ZIP**. Extraia o ZIP. A animação não roda na página do GitHub: ela roda no navegador, no arquivo que você abriu.
+As dez animações juntas estão na galeria: [https://camilocoutinho.github.io/bases-animacao-reels/](https://camilocoutinho.github.io/bases-animacao-reels/). O arquivo é o [`index.html`](index.html) da raiz. A página de código do GitHub mostra este texto e não roda a animação.
+
+Baixe a pasta para o seu computador se quiser gravar ou editar os arquivos. No GitHub, use o botão verde **Code** e depois **Download ZIP**. Extraia o ZIP.
 
 ### Receita 1. Efeito no vídeo falado
 
@@ -42,7 +44,7 @@ Se você instalou a skill original, em inglês, o comando é `/effects orbit fro
 
 Use esta receita quando o motion é um gráfico, um texto animado ou uma vinheta, sem precisar de um vídeo filmado.
 
-1. Abra [`motion-html/exemplos/index.html`](motion-html/exemplos/index.html) no navegador, com dois cliques, para ver os exemplos prontos.
+1. Abra a [galeria](https://camilocoutinho.github.io/bases-animacao-reels/) ou o [`index.html`](index.html). A lista arquivo a arquivo continua em [`motion-html/exemplos/index.html`](motion-html/exemplos/index.html).
 2. Para gerar uma variação, copie um prompt de [`motion-html/prompts/`](motion-html/prompts/) e cole no Claude.
 3. Salve o HTML que o Claude devolver e abra no navegador.
 4. Grave a tela e importe essa gravação no editor, como um clipe.
@@ -73,6 +75,7 @@ No primeiro uso da skill de efeitos, o README dela descreve uma preparação de 
 ## Mapa das pastas
 
 ```
+├── index.html                galeria das 10 animações
 ├── README.md                 você está aqui
 ├── LICENSE                   licença MIT do material original
 ├── CREDITOS.md               fontes, links e o que não foi copiado
