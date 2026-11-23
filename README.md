@@ -76,7 +76,6 @@ No primeiro uso da skill de efeitos, o README dela descreve uma preparação de 
 ├── README.md                 você está aqui
 ├── LICENSE                   licença MIT do material original
 ├── CREDITOS.md               fontes, links e o que não foi copiado
-├── SEGURANCA.md              ponte para o checklist de quem publica com IA
 ├── efeitos-talking-head/
 │   └── README.md             instalar a skill e pedir o efeito
 ├── motion-html/
@@ -96,7 +95,6 @@ Não há pasta de template do CapCut, do Premiere, do DaVinci, do After Effects 
 
 - O editor continua sendo o lugar da música, da legenda e do corte fino. Este repositório entrega o rascunho do motion.
 - O material que o [@gut1n](https://www.instagram.com/p/DgAySIoIAQW/) e o [@zeeuiux](https://www.instagram.com/reel/Dfpf3T_gxSp/) enviam por mensagem direta não está aqui. Não há licença pública para republicar esses pacotes. O crédito e o link ficam em [`CREDITOS.md`](CREDITOS.md).
-- Publicar uma página na internet pede outro cuidado. Este repositório não deixa um site seguro sozinho. Quem for colocar um HTML no ar olha o checklist indicado em [`SEGURANCA.md`](SEGURANCA.md).
 
 ## Créditos e referências
 
@@ -113,12 +111,6 @@ O texto, os prompts e os exemplos em HTML deste repositório estão na licença 
 Em português claro: você pode usar estes arquivos nos seus Reels, alterar cores e frases, e levar para trabalho de cliente. Se for republicar os arquivos, mantenha o aviso de copyright e a licença.
 
 Essa MIT vale para o que foi escrito aqui. Ela não transfere a autoria da skill da Vibha, nem dos prompts de outras pessoas, nem cobre o material que só circula por mensagem direta. Usar o vídeo pronto no seu Reel também não torna você autor dessa skill.
-
-## Outros projetos
-
-- [Checklist de segurança para quem programa com IA](https://github.com/camilocoutinho/checklist-seguranca-vibecoding). É o primeiro produto público no GitHub do Camilo, para quem publica página e código feitos com IA. Este repositório é o segundo, para quem edita.
-
-A ponte entre os dois está em [`SEGURANCA.md`](SEGURANCA.md).
 
 ## Para os alunos do Camilo
 
