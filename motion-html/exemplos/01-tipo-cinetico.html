@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>01 · Tipo cinético</title>
+  <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <style>
+    /* Troque só estas cores e fontes. Salve e atualize o navegador. */
+    :root {
+      --fundo: #14161c;
+      --texto: #f3efe6;
+      --destaque: #ff4b3a;
+      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fonte-display: "Liberation Sans", "Arial Black", Impact, "Segoe UI", sans-serif;
+    }
+
+    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    body { display: grid; place-items: center; overflow: hidden; }
+    #caixa { position: relative; }
+    #palco {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: top left;
+      overflow: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: var(--fonte);
+    }
+
+    .centro {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 88px;
+      box-sizing: border-box;
+    }
+    .linha {
+      margin: 0;
+      width: fit-content;
+      transform-origin: left center;
+      font-family: var(--fonte-display);
+      font-weight: 800;
+      font-size: 168px;
+      line-height: 0.92;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+    .l1 { animation: s1 6s infinite; }
+    .l2 { animation: s2 6s infinite; }
+    .l3 {
+      color: var(--destaque);
+      position: relative;
+      display: inline-block;
+      animation: s3 6s infinite;
+    }
+    .risco {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      height: 16px;
+      background: var(--texto);
+      transform-origin: left center;
+      animation: risco 6s infinite;
+    }
+    @keyframes s1 {
+      0% { opacity: 0; transform: translateY(48px) scale(1.16); }
+      12%, 90% { opacity: 1; transform: none; }
+      100% { opacity: 0; transform: none; }
+    }
+    @keyframes s2 {
+      0%, 14% { opacity: 0; transform: translateY(48px) scale(1.16); }
+      26%, 90% { opacity: 1; transform: none; }
+      100% { opacity: 0; transform: none; }
+    }
+    @keyframes s3 {
+      0%, 28% { opacity: 0; transform: translateY(48px) scale(1.16); }
+      40%, 90% { opacity: 1; transform: none; }
+      100% { opacity: 0; transform: none; }
+    }
+    @keyframes risco {
+      0%, 44% { transform: scaleX(0); }
+      58%, 90% { transform: scaleX(1); }
+      100% { transform: scaleX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="palco">
+      <div class="centro">
+        <p class="linha l1">Grava</p>
+        <p class="linha l2">Anima</p>
+        <p class="linha l3">Edita<span class="risco"></span></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function encaixa() {
+      var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+      var palco = document.getElementById("palco");
+      var caixa = document.getElementById("caixa");
+      palco.style.transform = "scale(" + s + ")";
+      caixa.style.width = (1080 * s) + "px";
+      caixa.style.height = (1920 * s) + "px";
+    }
+    window.addEventListener("resize", encaixa);
+    encaixa();
+  </script>
+</body>
+</html>

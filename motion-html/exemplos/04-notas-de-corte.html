@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>04 · Notas de corte</title>
+  <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <style>
+    /* Troque só estas cores e fontes. Salve e atualize o navegador. */
+    :root {
+      --fundo: #14161c;
+      --superficie: #222733;
+      --texto: #f3efe6;
+      --mudo: #9aa0ab;
+      --destaque: #ff4b3a;
+      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    body { display: grid; place-items: center; overflow: hidden; }
+    #caixa { position: relative; }
+    #palco {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: top left;
+      overflow: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: var(--fonte);
+    }
+
+    .pilha {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+      padding: 0 90px;
+      box-sizing: border-box;
+    }
+    article {
+      background: var(--superficie);
+      padding: 36px 40px 40px;
+    }
+    article:nth-child(1) { animation: e1 6s infinite; }
+    article:nth-child(2) { animation: e2 6s infinite; }
+    article:nth-child(3) {
+      box-shadow: inset 10px 0 0 var(--destaque);
+      animation: e3 6s infinite;
+    }
+    small {
+      display: block;
+      color: var(--mudo);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    strong {
+      display: block;
+      font-size: 58px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+    @keyframes e1 {
+      0%, 4% { opacity: 0; transform: translateX(160px); }
+      16%, 90% { opacity: 1; transform: none; }
+      100% { opacity: 0; transform: none; }
+    }
+    @keyframes e2 {
+      0%, 16% { opacity: 0; transform: translateX(160px); }
+      28%, 90% { opacity: 1; transform: none; }
+      100% { opacity: 0; transform: none; }
+    }
+    @keyframes e3 {
+      0%, 28% { opacity: 0; transform: translateX(160px); }
+      40%, 90% { opacity: 1; transform: none; }
+      100% { opacity: 0; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="palco">
+      <div class="pilha">
+        <article>
+          <small>nota 01</small>
+          <strong>Corta o silêncio</strong>
+        </article>
+        <article>
+          <small>nota 02</small>
+          <strong>Segura o olhar</strong>
+        </article>
+        <article>
+          <small>nota 03</small>
+          <strong>Entra a frase</strong>
+        </article>
+      </div>
+    </div>
+  </div>
+  <script>
+    function encaixa() {
+      var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+      var palco = document.getElementById("palco");
+      var caixa = document.getElementById("caixa");
+      palco.style.transform = "scale(" + s + ")";
+      caixa.style.width = (1080 * s) + "px";
+      caixa.style.height = (1920 * s) + "px";
+    }
+    window.addEventListener("resize", encaixa);
+    encaixa();
+  </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>07 · Barras da estrutura</title>
+  <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <style>
+    /* Troque só estas cores e fontes. Salve e atualize o navegador.
+       As larguras abaixo são exemplo visual. Troque pelos pesos do seu roteiro. */
+    :root {
+      --fundo: #14161c;
+      --texto: #f3efe6;
+      --mudo: #9aa0ab;
+      --trilho: #2a3140;
+      --destaque: #ff4b3a;
+      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --gancho: 88%;
+      --contexto: 62%;
+      --prova: 74%;
+      --pedido: 50%;
+    }
+
+    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    body { display: grid; place-items: center; overflow: hidden; }
+    #caixa { position: relative; }
+    #palco {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: top left;
+      overflow: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: var(--fonte);
+    }
+
+    .miolo {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 88px;
+      box-sizing: border-box;
+    }
+    h1 {
+      margin: 0;
+      font-size: 84px;
+      letter-spacing: -2px;
+    }
+    .nota {
+      margin: 16px 0 64px;
+      color: var(--mudo);
+      font-size: 30px;
+    }
+    .linha { margin: 0 0 36px; }
+    .nome {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+    .trilho {
+      height: 28px;
+      background: var(--trilho);
+    }
+    .preenchimento {
+      height: 100%;
+      background: var(--destaque);
+      transform-origin: left center;
+    }
+    .g { width: var(--gancho); animation: b1 6s infinite; }
+    .c { width: var(--contexto); animation: b2 6s infinite; }
+    .p { width: var(--prova); animation: b3 6s infinite; }
+    .d { width: var(--pedido); animation: b4 6s infinite; }
+    @keyframes b1 {
+      0%, 8% { transform: scaleX(0); }
+      24%, 90% { transform: scaleX(1); }
+      100% { transform: scaleX(0); }
+    }
+    @keyframes b2 {
+      0%, 18% { transform: scaleX(0); }
+      34%, 90% { transform: scaleX(1); }
+      100% { transform: scaleX(0); }
+    }
+    @keyframes b3 {
+      0%, 28% { transform: scaleX(0); }
+      44%, 90% { transform: scaleX(1); }
+      100% { transform: scaleX(0); }
+    }
+    @keyframes b4 {
+      0%, 38% { transform: scaleX(0); }
+      54%, 90% { transform: scaleX(1); }
+      100% { transform: scaleX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="palco">
+      <div class="miolo">
+        <h1>A estrutura</h1>
+        <p class="nota">Larguras de exemplo: troque pelos seus pesos.</p>
+        <div class="linha">
+          <span class="nome">Gancho</span>
+          <div class="trilho"><div class="preenchimento g"></div></div>
+        </div>
+        <div class="linha">
+          <span class="nome">Contexto</span>
+          <div class="trilho"><div class="preenchimento c"></div></div>
+        </div>
+        <div class="linha">
+          <span class="nome">Prova</span>
+          <div class="trilho"><div class="preenchimento p"></div></div>
+        </div>
+        <div class="linha">
+          <span class="nome">Pedido</span>
+          <div class="trilho"><div class="preenchimento d"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function encaixa() {
+      var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+      var palco = document.getElementById("palco");
+      var caixa = document.getElementById("caixa");
+      palco.style.transform = "scale(" + s + ")";
+      caixa.style.width = (1080 * s) + "px";
+      caixa.style.height = (1920 * s) + "px";
+    }
+    window.addEventListener("resize", encaixa);
+    encaixa();
+  </script>
+</body>
+</html>

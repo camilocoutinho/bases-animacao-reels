@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>02 · Faixa que destaca a palavra</title>
+  <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <style>
+    /* Troque só estas cores e fontes. Salve e atualize o navegador. */
+    :root {
+      --fundo: #14161c;
+      --texto: #f3efe6;
+      --mudo: #9aa0ab;
+      --destaque: #ff4b3a;
+      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    body { display: grid; place-items: center; overflow: hidden; }
+    #caixa { position: relative; }
+    #palco {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: top left;
+      overflow: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: var(--fonte);
+    }
+
+    .bloco {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      bottom: 320px;
+    }
+    .rotulo {
+      margin: 0 0 8px;
+      color: var(--mudo);
+      font-size: 28px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .frase {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 14px;
+      margin: 8px 0 0;
+      font-size: 78px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -2px;
+    }
+    .frase span { padding: 0 8px; }
+    .l1 span:nth-child(1) { animation: h1 6s step-end infinite; }
+    .l1 span:nth-child(2) { animation: h2 6s step-end infinite; }
+    .l1 span:nth-child(3) { animation: h3 6s step-end infinite; }
+    .l2 span:nth-child(1) { animation: h4 6s step-end infinite; }
+    .l2 span:nth-child(2) { animation: h5 6s step-end infinite; }
+    @keyframes h1 {
+      0%, 5%, 16%, 100% { background: transparent; color: var(--texto); }
+      7%, 14% { background: var(--destaque); color: #14161c; }
+    }
+    @keyframes h2 {
+      0%, 17%, 30%, 100% { background: transparent; color: var(--texto); }
+      19%, 28% { background: var(--destaque); color: #14161c; }
+    }
+    @keyframes h3 {
+      0%, 31%, 44%, 100% { background: transparent; color: var(--texto); }
+      33%, 42% { background: var(--destaque); color: #14161c; }
+    }
+    @keyframes h4 {
+      0%, 45%, 58%, 100% { background: transparent; color: var(--texto); }
+      47%, 56% { background: var(--destaque); color: #14161c; }
+    }
+    @keyframes h5 {
+      0%, 59%, 74%, 100% { background: transparent; color: var(--texto); }
+      61%, 72% { background: var(--destaque); color: #14161c; }
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="palco">
+      <div class="bloco">
+        <p class="rotulo">Legenda</p>
+        <p class="frase l1">
+          <span>Troca</span>
+          <span>esta</span>
+          <span>frase</span>
+        </p>
+        <p class="frase l2">
+          <span>pela</span>
+          <span>sua.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function encaixa() {
+      var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+      var palco = document.getElementById("palco");
+      var caixa = document.getElementById("caixa");
+      palco.style.transform = "scale(" + s + ")";
+      caixa.style.width = (1080 * s) + "px";
+      caixa.style.height = (1920 * s) + "px";
+    }
+    window.addEventListener("resize", encaixa);
+    encaixa();
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>06 · Timecode do gancho</title>
+  <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <style>
+    /* Troque só estas cores e fontes. Salve e atualize o navegador. */
+    :root {
+      --fundo: #14161c;
+      --texto: #f3efe6;
+      --mudo: #9aa0ab;
+      --destaque: #ff4b3a;
+      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fonte-display: "Liberation Sans", "Arial Black", Impact, "Segoe UI", sans-serif;
+    }
+
+    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    body { display: grid; place-items: center; overflow: hidden; }
+    #caixa { position: relative; }
+    #palco {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: top left;
+      overflow: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: var(--fonte);
+    }
+
+    .miolo {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px 80px;
+      box-sizing: border-box;
+    }
+    .rotulo {
+      margin: 0 0 12px;
+      color: var(--mudo);
+      letter-spacing: 0.2em;
+      font-size: 28px;
+    }
+    #tempo {
+      margin: 0;
+      font-family: var(--fonte-display);
+      font-weight: 800;
+      font-size: 132px;
+      letter-spacing: -3px;
+      font-variant-numeric: tabular-nums;
+    }
+    #tempo span { color: var(--destaque); }
+    .nota {
+      margin: 28px 0 0;
+      max-width: 16em;
+      color: var(--mudo);
+      font-size: 32px;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="palco">
+      <div class="miolo">
+        <p class="rotulo">TEMPO DO GANCHO</p>
+        <p id="tempo">00:00.<span>00</span></p>
+        <p class="nota">Exemplo visual: troque pela duração do seu gancho.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function encaixa() {
+      var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+      var palco = document.getElementById("palco");
+      var caixa = document.getElementById("caixa");
+      palco.style.transform = "scale(" + s + ")";
+      caixa.style.width = (1080 * s) + "px";
+      caixa.style.height = (1920 * s) + "px";
+    }
+    window.addEventListener("resize", encaixa);
+    encaixa();
+
+    var el = document.getElementById("tempo");
+    var ciclo = 6000;
+    var conta = 3000;
+    function frame(agora) {
+      var t = agora % ciclo;
+      var ms = t < conta ? t : conta;
+      var centesimos = Math.floor(ms / 10);
+      var cs = centesimos % 100;
+      var s = Math.floor(centesimos / 100);
+      el.innerHTML = "00:0" + s + ".<span>" + (cs < 10 ? "0" : "") + cs + "</span>";
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  </script>
+</body>
+</html>
