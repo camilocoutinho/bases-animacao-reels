@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>05 · Checklist do Reel</title>
   <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Troque só estas cores e fontes. Salve e atualize o navegador. */
     :root {
-      --fundo: #14161c;
-      --texto: #f3efe6;
-      --mudo: #9aa0ab;
-      --destaque: #ff4b3a;
-      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fundo: #111111;
+      --texto: #ffffff;
+      --mudo: #c8c8c8;
+      --destaque: #99ca3d;
+      --fonte: "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fonte-display: "Domine", Georgia, "Times New Roman", serif;
     }
 
-    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    html, body { margin: 0; height: 100%; background: #111111; }
     body { display: grid; place-items: center; overflow: hidden; }
     #caixa { position: relative; }
     #palco {
@@ -41,6 +45,8 @@
     }
     h1 {
       margin: 0 0 56px;
+      font-family: var(--fonte-display);
+      font-weight: 700;
       font-size: 78px;
       line-height: 0.95;
       letter-spacing: -2px;

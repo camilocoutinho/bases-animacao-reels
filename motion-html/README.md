@@ -26,9 +26,9 @@ A página do GitHub mostra o código. A animação só aparece quando o arquivo 
 2. No começo do arquivo, dentro de `:root`, estão as cores. Cada uma é um código que começa com `#`.
 
 ```css
---fundo: #14161c;      /* cor de trás */
---texto: #f3efe6;      /* cor da letra */
---destaque: #ff4b3a;   /* cor que chama a atenção */
+--fundo: #111111;      /* cor de trás */
+--texto: #ffffff;      /* cor da letra */
+--destaque: #99ca3d;   /* cor que chama a atenção */
 ```
 
 3. Troque o código pela cor do seu vídeo. Salve.

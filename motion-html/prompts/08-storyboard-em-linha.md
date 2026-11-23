@@ -13,11 +13,11 @@ Cena: um retângulo de storyboard se desenha com um traço, como uma caneta. Em 
 
 O traço usa a cor do texto sobre o fundo escuro. Sem preenchimento no retângulo.
 
-Não use imagem, fonte externa nem biblioteca. SVG, HTML e CSS bastam.
+Não use imagem nem biblioteca. A palavra embaixo do quadro em Domine, pelo Google Fonts. SVG, HTML e CSS bastam.
 
-No topo do CSS, variáveis fáceis de trocar: --fundo, --texto, --destaque, --fonte.
+No topo do CSS, variáveis fáceis de trocar: --fundo, --texto, --destaque, --fonte, --fonte-display.
 
-Cores de exemplo: fundo #14161c, texto #f3efe6, destaque #ff4b3a.
+Cores de exemplo: fundo #111111, texto #ffffff, destaque #99ca3d.
 
 Deixe uma margem grande em volta do retângulo.
 ```

@@ -5,18 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>04 · Notas de corte</title>
   <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Troque só estas cores e fontes. Salve e atualize o navegador. */
     :root {
-      --fundo: #14161c;
-      --superficie: #222733;
-      --texto: #f3efe6;
-      --mudo: #9aa0ab;
-      --destaque: #ff4b3a;
-      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fundo: #111111;
+      --superficie: #1c1c1c;
+      --texto: #ffffff;
+      --mudo: #c8c8c8;
+      --destaque: #99ca3d;
+      --fonte: "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fonte-display: "Domine", Georgia, "Times New Roman", serif;
     }
 
-    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    html, body { margin: 0; height: 100%; background: #111111; }
     body { display: grid; place-items: center; overflow: hidden; }
     #caixa { position: relative; }
     #palco {
@@ -61,8 +65,9 @@
     }
     strong {
       display: block;
+      font-family: var(--fonte-display);
       font-size: 58px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: -1px;
     }
     @keyframes e1 {

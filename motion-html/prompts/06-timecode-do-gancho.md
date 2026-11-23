@@ -13,11 +13,11 @@ Cena: um rótulo pequeno, "TEMPO DO GANCHO", e abaixo um número enorme no forma
 
 Debaixo do número, uma linha: "exemplo visual: troque pela duração do seu gancho".
 
-Pode usar um pouco de JavaScript para atualizar o número. Não use imagem, fonte externa nem biblioteca.
+Pode usar um pouco de JavaScript para atualizar o número. Não use imagem nem biblioteca. O número em Domine e os rótulos em Montserrat, as duas pelo Google Fonts.
 
 No topo do CSS, variáveis fáceis de trocar: --fundo, --texto, --mudo, --destaque, --fonte, --fonte-display.
 
-Cores de exemplo: fundo #14161c, texto #f3efe6, mudo #9aa0ab, destaque #ff4b3a. Os centésimos podem ficar na cor de destaque.
+Cores de exemplo: fundo #111111, texto #ffffff, mudo #c8c8c8, destaque #99ca3d. Os centésimos ficam na cor de destaque.
 
 Deixe o número no centro óptico do quadro, um pouco acima do meio.
 ```
