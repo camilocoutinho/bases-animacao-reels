@@ -18,11 +18,11 @@ nota 03 — Entra a frase
 
 O card usa uma cor de superfície um pouco mais clara que o fundo. O rótulo usa uma cor apagada. A frase usa a cor do texto. O terceiro card pode levar um filete na cor de destaque na borda esquerda.
 
-Não use imagem, ícone de loja, fonte externa nem biblioteca. Só HTML e CSS.
+Não use imagem, ícone de loja nem biblioteca. A frase de cada card em Domine e o rótulo em Montserrat, as duas pelo Google Fonts. Só HTML e CSS.
 
-No topo do CSS, variáveis fáceis de trocar: --fundo, --superficie, --texto, --mudo, --destaque, --fonte.
+No topo do CSS, variáveis fáceis de trocar: --fundo, --superficie, --texto, --mudo, --destaque, --fonte, --fonte-display.
 
-Cores de exemplo: fundo #14161c, superfície #222733, texto #f3efe6, mudo #9aa0ab, destaque #ff4b3a.
+Cores de exemplo: fundo #111111, superfície #1c1c1c, texto #ffffff, mudo #c8c8c8, destaque #99ca3d.
 ```
 
 Texto original. Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja `LICENSE` na raiz do repositório.

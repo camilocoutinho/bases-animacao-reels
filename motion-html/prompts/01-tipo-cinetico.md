@@ -16,7 +16,7 @@ EDITA
 
 Cada palavra entra com um impacto curto: começa maior, um pouco abaixo, e assenta no lugar. A seguinte só entra quando a anterior já assentou. EDITA usa a cor de destaque. Quando ela assenta, um risco na cor do texto se desenha embaixo dela, da esquerda para a direita.
 
-Não use imagem, ícone, fonte baixada da internet nem biblioteca. Só HTML e CSS.
+Não use imagem, ícone nem biblioteca. Títulos em Domine e o restante em Montserrat, as duas pelo Google Fonts. Só HTML e CSS.
 
 No topo do CSS, deixe variáveis fáceis de trocar:
 --fundo
@@ -25,7 +25,7 @@ No topo do CSS, deixe variáveis fáceis de trocar:
 --fonte
 --fonte-display
 
-Cores de exemplo, para eu trocar depois: fundo #14161c, texto #f3efe6, destaque #ff4b3a.
+Cores de exemplo, para eu trocar depois: fundo #111111, texto #ffffff, destaque #99ca3d. --fonte é Montserrat. --fonte-display é Domine.
 
 Mantenha as palavras longe das bordas de cima e de baixo.
 ```

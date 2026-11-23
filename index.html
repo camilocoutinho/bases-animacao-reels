@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bases de Animação para Reels · Double Play</title>
+  <meta name="description" content="Dez animações em HTML para Reels, da Double Play Media. Cada uma roda numa moldura de celular, com o prompt pronto para copiar.">
+  <!--
+    Identidade visual lida em doubleplay.com.br (arquivo de 02/12/2024; o site ao vivo não respondeu nesta montagem):
+    fundo #111111, destaque #99CA3D, título em Domine, texto em sans geométrica.
+    Metropolis não está no Google Fonts; Montserrat entra no lugar.
+    O nome doubleplay é texto. Não há logo copiado do site.
+    Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500;700&family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111111;
+      --paper: #ffffff;
+      --lime: #99ca3d;
+      --muted: #555555;
+      --soft: rgba(255, 255, 255, 0.8);
+      --serif: "Domine", Georgia, "Times New Roman", serif;
+      --sans: "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; }
+
+    .topo {
+      background: var(--ink);
+      color: #fff;
+      padding: 28px 0 72px;
+    }
+    .miolo {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+    .barra {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 64px;
+    }
+    .marca {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: -0.04em;
+    }
+    .marca-play {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--lime);
+      display: grid;
+      place-items: center;
+      flex: none;
+    }
+    .marca-play::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 7px;
+      border-color: transparent transparent transparent var(--ink);
+      margin-left: 2px;
+    }
+    .barra-link {
+      color: var(--lime);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .olho {
+      margin: 0 0 18px;
+      color: var(--lime);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      max-width: 16ch;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+    .linha {
+      width: 48px;
+      height: 2px;
+      margin: 28px 0 18px;
+      background: var(--lime);
+    }
+    .intro {
+      margin: 0;
+      max-width: 38em;
+      color: var(--soft);
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .galeria { padding: 72px 0 40px; }
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 64px 36px;
+    }
+    .card { min-width: 0; }
+    .phone {
+      width: min(100%, 270px);
+      margin: 0 auto 28px;
+      padding: 14px 12px 16px;
+      background: var(--ink);
+      border-radius: 32px;
+      box-shadow: 0 22px 44px rgba(17, 17, 17, 0.16);
+    }
+    .phone-notch {
+      display: block;
+      width: 72px;
+      height: 8px;
+      margin: 0 auto 10px;
+      border-radius: 999px;
+      background: #2a2a2a;
+    }
+    .phone-screen {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #000;
+    }
+    .phone-screen iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #000;
+    }
+    .card .olho { margin-bottom: 8px; }
+    h2 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .desc {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .acoes {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 18px;
+    }
+    .copiar {
+      appearance: none;
+      border: 0;
+      border-radius: 3px;
+      background: var(--lime);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .copiar:hover { background: #a8d64e; }
+    .copiar:focus-visible,
+    .abrir:focus-visible,
+    .marca:focus-visible,
+    .barra-link:focus-visible,
+    .rodape a:focus-visible {
+      outline: 2px solid var(--lime);
+      outline-offset: 3px;
+    }
+    .abrir {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 2px solid var(--lime);
+      padding-bottom: 2px;
+    }
+    .aviso {
+      margin: 8px 0 0;
+      min-height: 1.2em;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .rodape {
+      background: var(--ink);
+      color: var(--soft);
+      padding: 36px 0;
+      font-weight: 500;
+    }
+    .rodape .miolo {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px 32px;
+      align-items: baseline;
+    }
+    .rodape p { margin: 0; }
+    .rodape a {
+      color: var(--lime);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .grade { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .topo { padding-bottom: 48px; }
+      .barra { padding-bottom: 40px; align-items: flex-start; flex-direction: column; gap: 14px; }
+      .miolo { width: min(1160px, calc(100% - 32px)); }
+      .intro { font-size: 18px; }
+      .galeria { padding-top: 40px; }
+      .grade { grid-template-columns: 1fr; gap: 48px; }
+      .rodape .miolo { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <div class="miolo">
+      <div class="barra">
+        <a class="marca" href="https://doubleplay.com.br">
+          <span class="marca-play" aria-hidden="true"></span>
+          doubleplay
+        </a>
+        <a class="barra-link" href="https://doubleplay.com.br">doubleplay.com.br</a>
+      </div>
+      <p class="olho">/ Galeria</p>
+      <h1>Dez motions para abrir, copiar e gravar.</h1>
+      <div class="linha" aria-hidden="true"></div>
+      <p class="intro">Cada arquivo roda aqui dentro do celular. Copie o prompt, peça uma variação no Claude e abra em tela cheia para gravar.</p>
+    </div>
+  </header>
+
+  <main class="galeria">
+    <div class="miolo">
+      <div class="grade">
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/01-tipo-cinetico.html" title="Tipo cinético"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 01 · Tipo</p>
+          <h2>Tipo cinético</h2>
+          <p class="desc">Três palavras entram com impacto e a última ganha um risco.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/01-tipo-cinetico.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/01-tipo-cinetico.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/02-faixa-destaque.html" title="Faixa que destaca"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 02 · Tipo</p>
+          <h2>Faixa que destaca</h2>
+          <p class="desc">Uma frase na base, com uma palavra acesa de cada vez.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/02-faixa-destaque.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/02-faixa-destaque.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/03-pergunta-e-resposta.html" title="Pergunta e resposta"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 03 · Tipo</p>
+          <h2>Pergunta e resposta</h2>
+          <p class="desc">Uma pergunta é digitada e uma resposta entra em seguida.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/03-pergunta-e-resposta.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/03-pergunta-e-resposta.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/04-notas-de-corte.html" title="Notas de corte"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 04 · Interface</p>
+          <h2>Notas de corte</h2>
+          <p class="desc">Três notas de edição empilham na tela.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/04-notas-de-corte.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/04-notas-de-corte.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/05-checklist-do-reel.html" title="Checklist do Reel"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 05 · Interface</p>
+          <h2>Checklist do Reel</h2>
+          <p class="desc">Uma lista vai sendo marcada.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/05-checklist-do-reel.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/05-checklist-do-reel.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/06-timecode-do-gancho.html" title="Timecode do gancho"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 06 · Dados</p>
+          <h2>Timecode do gancho</h2>
+          <p class="desc">Um relógio conta os primeiros segundos.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/06-timecode-do-gancho.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/06-timecode-do-gancho.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/07-barras-da-estrutura.html" title="Barras da estrutura"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 07 · Dados</p>
+          <h2>Barras da estrutura</h2>
+          <p class="desc">Quatro barras de uma estrutura de roteiro.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/07-barras-da-estrutura.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/07-barras-da-estrutura.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/08-storyboard-em-linha.html" title="Storyboard em linha"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 08 · Arte</p>
+          <h2>Storyboard em linha</h2>
+          <p class="desc">Um quadro de storyboard se desenha.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/08-storyboard-em-linha.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/08-storyboard-em-linha.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/09-fita-adesiva.html" title="Fita adesiva"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 09 · Arte</p>
+          <h2>Fita adesiva</h2>
+          <p class="desc">Uma fita com uma frase pousa no centro.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/09-fita-adesiva.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/09-fita-adesiva.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+
+        <article class="card">
+          <div class="phone">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-screen">
+              <iframe src="motion-html/exemplos/10-arco-de-atos.html" title="Arco de atos"></iframe>
+            </div>
+          </div>
+          <p class="olho">/ 10 · 3D simples</p>
+          <h2>Arco de atos</h2>
+          <p class="desc">Três cards, gancho, meio e fim, entram em arco.</p>
+          <div class="acoes">
+            <button class="copiar" type="button" data-prompt="motion-html/prompts/10-arco-de-atos.md">Copiar prompt</button>
+            <a class="abrir" href="motion-html/exemplos/10-arco-de-atos.html">Abrir em tela cheia</a>
+          </div>
+          <p class="aviso" aria-live="polite"></p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="miolo">
+      <p>Double Play Media / Camilo Coutinho</p>
+      <a href="https://doubleplay.com.br">doubleplay.com.br</a>
+    </div>
+  </footer>
+
+  <script>
+    function extrairPrompt(md) {
+      var bloco = md.match(/```text\s*\n([\s\S]*?)```/);
+      return bloco ? bloco[1].replace(/\s+$/, "") : md.trim();
+    }
+
+    document.querySelectorAll(".copiar").forEach(function (botao) {
+      botao.addEventListener("click", function () {
+        var aviso = botao.parentElement.nextElementSibling;
+        var original = "Copiar prompt";
+        fetch(botao.getAttribute("data-prompt"))
+          .then(function (resposta) {
+            if (!resposta.ok) throw new Error("leitura");
+            return resposta.text();
+          })
+          .then(function (md) {
+            var texto = extrairPrompt(md);
+            if (!texto || texto.indexOf("Crie um único arquivo HTML") === -1) throw new Error("vazio");
+            return navigator.clipboard.writeText(texto).then(function () {
+              botao.textContent = "Prompt copiado";
+              aviso.textContent = "O prompt foi para a área de transferência.";
+              window.setTimeout(function () {
+                botao.textContent = original;
+                aviso.textContent = "";
+              }, 2000);
+            });
+          })
+          .catch(function () {
+            botao.textContent = original;
+            aviso.textContent = "Não deu para copiar daqui. Abra o arquivo do prompt na pasta motion-html/prompts.";
+          });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -16,11 +16,11 @@ A frase fica em letra grande, clara, sobre um fundo escuro. Uma palavra de cada 
 
 Acima da frase, um rótulo pequeno em caixa alta: LEGENDA.
 
-Não use imagem, ícone, fonte externa nem biblioteca. Só HTML e CSS.
+Não use imagem, ícone nem biblioteca. A frase grande em Domine e o rótulo em Montserrat, as duas pelo Google Fonts. A palavra acesa fica com fundo na cor de destaque e texto #111111. Só HTML e CSS.
 
-No topo do CSS, variáveis fáceis de trocar: --fundo, --texto, --destaque, --fonte.
+No topo do CSS, variáveis fáceis de trocar: --fundo, --texto, --mudo, --destaque, --tinta, --fonte, --fonte-display.
 
-Cores de exemplo: fundo #14161c, texto #f3efe6, destaque #ff4b3a.
+Cores de exemplo: fundo #111111, texto #ffffff, mudo #c8c8c8, destaque #99ca3d, tinta #111111.
 
 Mantenha a frase fora da faixa extrema de baixo, onde o aplicativo de Reels coloca botões.
 ```

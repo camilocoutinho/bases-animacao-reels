@@ -18,11 +18,11 @@ card 3 — título "Fim", linha "o pedido"
 
 O card do meio usa a cor de destaque no título. Os outros usam a cor do texto. Fundo do card um pouco mais claro que o fundo da cena.
 
-Não use imagem, modelo 3D, fonte externa nem biblioteca. CSS com perspective e rotateY basta. Pode ser só HTML e CSS.
+Não use imagem, modelo 3D nem biblioteca. O título de cada card em Domine e a linha de baixo em Montserrat, as duas pelo Google Fonts. CSS com perspective e rotateY basta. Pode ser só HTML e CSS.
 
-No topo do CSS, variáveis fáceis de trocar: --fundo, --superficie, --texto, --mudo, --destaque, --fonte.
+No topo do CSS, variáveis fáceis de trocar: --fundo, --superficie, --texto, --mudo, --destaque, --fonte, --fonte-display.
 
-Cores de exemplo: fundo #14161c, superfície #222733, texto #f3efe6, mudo #9aa0ab, destaque #ff4b3a.
+Cores de exemplo: fundo #111111, superfície #1c1c1c, texto #ffffff, mudo #c8c8c8, destaque #99ca3d.
 ```
 
 Texto original. Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja `LICENSE` na raiz do repositório.

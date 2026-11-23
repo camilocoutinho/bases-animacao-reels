@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>02 · Faixa que destaca a palavra</title>
   <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Troque só estas cores e fontes. Salve e atualize o navegador. */
     :root {
-      --fundo: #14161c;
-      --texto: #f3efe6;
-      --mudo: #9aa0ab;
-      --destaque: #ff4b3a;
-      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fundo: #111111;
+      --texto: #ffffff;
+      --mudo: #c8c8c8;
+      --destaque: #99ca3d;
+      --tinta: #111111;
+      --fonte: "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fonte-display: "Domine", Georgia, "Times New Roman", serif;
     }
 
-    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    html, body { margin: 0; height: 100%; background: #111111; }
     body { display: grid; place-items: center; overflow: hidden; }
     #caixa { position: relative; }
     #palco {
@@ -49,8 +54,9 @@
       flex-wrap: nowrap;
       gap: 14px;
       margin: 8px 0 0;
+      font-family: var(--fonte-display);
       font-size: 78px;
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1.15;
       letter-spacing: -2px;
     }
@@ -62,23 +68,23 @@
     .l2 span:nth-child(2) { animation: h5 6s step-end infinite; }
     @keyframes h1 {
       0%, 5%, 16%, 100% { background: transparent; color: var(--texto); }
-      7%, 14% { background: var(--destaque); color: #14161c; }
+      7%, 14% { background: var(--destaque); color: var(--tinta); }
     }
     @keyframes h2 {
       0%, 17%, 30%, 100% { background: transparent; color: var(--texto); }
-      19%, 28% { background: var(--destaque); color: #14161c; }
+      19%, 28% { background: var(--destaque); color: var(--tinta); }
     }
     @keyframes h3 {
       0%, 31%, 44%, 100% { background: transparent; color: var(--texto); }
-      33%, 42% { background: var(--destaque); color: #14161c; }
+      33%, 42% { background: var(--destaque); color: var(--tinta); }
     }
     @keyframes h4 {
       0%, 45%, 58%, 100% { background: transparent; color: var(--texto); }
-      47%, 56% { background: var(--destaque); color: #14161c; }
+      47%, 56% { background: var(--destaque); color: var(--tinta); }
     }
     @keyframes h5 {
       0%, 59%, 74%, 100% { background: transparent; color: var(--texto); }
-      61%, 72% { background: var(--destaque); color: #14161c; }
+      61%, 72% { background: var(--destaque); color: var(--tinta); }
     }
   </style>
 </head>

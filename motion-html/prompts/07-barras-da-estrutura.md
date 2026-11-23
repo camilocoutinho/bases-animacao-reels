@@ -19,11 +19,11 @@ Pedido, 50%
 
 Acima das barras, uma nota curta: "larguras de exemplo: troque pelos seus pesos".
 
-Não use imagem, fonte externa nem biblioteca. Só HTML e CSS.
+Não use imagem nem biblioteca. O título em Domine e os nomes das barras em Montserrat, as duas pelo Google Fonts. Só HTML e CSS.
 
-No topo do CSS, variáveis fáceis de trocar: --fundo, --texto, --mudo, --trilho, --destaque, --fonte.
+No topo do CSS, variáveis fáceis de trocar: --fundo, --texto, --mudo, --trilho, --destaque, --fonte, --fonte-display.
 
-Cores de exemplo: fundo #14161c, texto #f3efe6, mudo #9aa0ab, trilho #2a3140, destaque #ff4b3a.
+Cores de exemplo: fundo #111111, texto #ffffff, mudo #c8c8c8, trilho #2a2a2a, destaque #99ca3d.
 ```
 
 Texto original. Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja `LICENSE` na raiz do repositório.
