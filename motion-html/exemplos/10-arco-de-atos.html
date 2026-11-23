@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10 · Arco de atos</title>
+  <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <style>
+    /* Troque só estas cores e fontes. Salve e atualize o navegador. */
+    :root {
+      --fundo: #14161c;
+      --superficie: #222733;
+      --texto: #f3efe6;
+      --mudo: #9aa0ab;
+      --destaque: #ff4b3a;
+      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    body { display: grid; place-items: center; overflow: hidden; }
+    #caixa { position: relative; }
+    #palco {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: top left;
+      overflow: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: var(--fonte);
+    }
+
+    .cena {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      perspective: 1600px;
+    }
+    article {
+      width: 286px;
+      height: 480px;
+      box-sizing: border-box;
+      background: var(--superficie);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 52px;
+      letter-spacing: -1px;
+    }
+    p {
+      margin: 0;
+      color: var(--mudo);
+      font-size: 28px;
+      line-height: 1.3;
+    }
+    .meio h2 { color: var(--destaque); }
+    .esq { animation: esq 6s infinite; }
+    .meio { animation: meio 6s infinite; }
+    .dir { animation: dir 6s infinite; }
+    @keyframes esq {
+      0%, 4% { opacity: 0; transform: translateY(90px) rotateY(24deg); }
+      18%, 88% { opacity: 1; transform: translateY(0) rotateY(24deg); }
+      100% { opacity: 0; transform: translateY(0) rotateY(24deg); }
+    }
+    @keyframes meio {
+      0%, 16% { opacity: 0; transform: translateY(90px) rotateY(0deg) translateZ(50px); }
+      32%, 88% { opacity: 1; transform: translateY(0) rotateY(0deg) translateZ(50px); }
+      100% { opacity: 0; transform: translateY(0) rotateY(0deg) translateZ(50px); }
+    }
+    @keyframes dir {
+      0%, 28% { opacity: 0; transform: translateY(90px) rotateY(-24deg); }
+      44%, 88% { opacity: 1; transform: translateY(0) rotateY(-24deg); }
+      100% { opacity: 0; transform: translateY(0) rotateY(-24deg); }
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="palco">
+      <div class="cena">
+        <article class="esq">
+          <h2>Gancho</h2>
+          <p>os 3 primeiros segundos</p>
+        </article>
+        <article class="meio">
+          <h2>Meio</h2>
+          <p>o que sustenta</p>
+        </article>
+        <article class="dir">
+          <h2>Fim</h2>
+          <p>o pedido</p>
+        </article>
+      </div>
+    </div>
+  </div>
+  <script>
+    function encaixa() {
+      var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+      var palco = document.getElementById("palco");
+      var caixa = document.getElementById("caixa");
+      palco.style.transform = "scale(" + s + ")";
+      caixa.style.width = (1080 * s) + "px";
+      caixa.style.height = (1920 * s) + "px";
+    }
+    window.addEventListener("resize", encaixa);
+    encaixa();
+  </script>
+</body>
+</html>

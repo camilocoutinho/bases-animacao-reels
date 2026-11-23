@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>09 · Fita adesiva</title>
+  <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <style>
+    /* Troque só estas cores e fontes. Salve e atualize o navegador. */
+    :root {
+      --fundo: #14161c;
+      --fita: #f0c14a;
+      --tinta: #1c1406;
+      --fonte-display: "Liberation Sans", "Arial Black", Impact, "Segoe UI", sans-serif;
+    }
+
+    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    body { display: grid; place-items: center; overflow: hidden; }
+    #caixa { position: relative; }
+    #palco {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: top left;
+      overflow: hidden;
+      background: var(--fundo);
+      color: var(--tinta);
+      font-family: var(--fonte-display);
+    }
+
+    .miolo {
+      height: 100%;
+      display: grid;
+      place-items: center;
+    }
+    .fita {
+      margin: 0;
+      background: var(--fita);
+      color: var(--tinta);
+      font-weight: 800;
+      font-size: 78px;
+      letter-spacing: -1px;
+      line-height: 1;
+      padding: 34px 42px 30px;
+      box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
+      animation: pousa 6s infinite;
+    }
+    @keyframes pousa {
+      0% { transform: translateY(-1400px) rotate(-16deg); }
+      18% { transform: translateY(22px) rotate(-5deg); }
+      28%, 84% { transform: translateY(0) rotate(-7deg); }
+      100% { transform: translateY(-1400px) rotate(-16deg); }
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="palco">
+      <div class="miolo">
+        <p class="fita">TROQUE A FRASE</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function encaixa() {
+      var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+      var palco = document.getElementById("palco");
+      var caixa = document.getElementById("caixa");
+      palco.style.transform = "scale(" + s + ")";
+      caixa.style.width = (1080 * s) + "px";
+      caixa.style.height = (1920 * s) + "px";
+    }
+    window.addEventListener("resize", encaixa);
+    encaixa();
+  </script>
+</body>
+</html>

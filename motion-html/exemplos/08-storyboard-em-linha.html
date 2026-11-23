@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>08 · Storyboard em linha</title>
+  <!-- Copyright (c) 2026 Camilo Coutinho. Licença MIT. Veja LICENSE na raiz do repositório. -->
+  <style>
+    /* Troque só estas cores e fontes. Salve e atualize o navegador. */
+    :root {
+      --fundo: #14161c;
+      --texto: #f3efe6;
+      --destaque: #ff4b3a;
+      --fonte: "Liberation Sans", "Nimbus Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html, body { margin: 0; height: 100%; background: #0c0d10; }
+    body { display: grid; place-items: center; overflow: hidden; }
+    #caixa { position: relative; }
+    #palco {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: top left;
+      overflow: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: var(--fonte);
+    }
+
+    .miolo {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 70px;
+      box-sizing: border-box;
+    }
+    svg { width: 760px; height: 980px; }
+    .t {
+      fill: none;
+      stroke: var(--texto);
+      stroke-width: 8;
+      stroke-linecap: square;
+    }
+    .moldura {
+      stroke-dasharray: 3400;
+      stroke-dashoffset: 3400;
+      animation: moldura 6s infinite;
+    }
+    .terco {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: terco 6s infinite;
+    }
+    .legenda {
+      margin: 28px 0 0;
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--destaque);
+      animation: surge 6s infinite;
+    }
+    @keyframes moldura {
+      0% { stroke-dashoffset: 3400; }
+      32%, 88% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 3400; }
+    }
+    @keyframes terco {
+      0%, 28% { stroke-dashoffset: 1000; }
+      52%, 88% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 1000; }
+    }
+    @keyframes surge {
+      0%, 50% { opacity: 0; transform: translateY(12px); }
+      62%, 88% { opacity: 1; transform: none; }
+      100% { opacity: 0; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="palco">
+      <div class="miolo">
+        <svg viewBox="0 0 760 980" aria-hidden="true">
+          <rect class="t moldura" x="16" y="16" width="728" height="948"/>
+          <line class="t terco" x1="16" y1="332" x2="744" y2="332"/>
+          <line class="t terco" x1="16" y1="648" x2="744" y2="648"/>
+          <line class="t terco" x1="258" y1="16" x2="258" y2="964"/>
+          <line class="t terco" x1="502" y1="16" x2="502" y2="964"/>
+        </svg>
+        <p class="legenda">seu quadro</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function encaixa() {
+      var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+      var palco = document.getElementById("palco");
+      var caixa = document.getElementById("caixa");
+      palco.style.transform = "scale(" + s + ")";
+      caixa.style.width = (1080 * s) + "px";
+      caixa.style.height = (1920 * s) + "px";
+    }
+    window.addEventListener("resize", encaixa);
+    encaixa();
+  </script>
+</body>
+</html>
