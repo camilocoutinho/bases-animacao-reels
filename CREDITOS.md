@@ -91,7 +91,3 @@ O material abaixo circula por mensagem direta e não tem uma licença pública q
 - Imagens do Instagram.
 - Qualquer pacote cuja licença não tenha sido aberta e conferida.
 - Templates `.mogrt`, `.aep` ou `.drfx`. Não há uma base licenciada desses formatos nas fontes acima.
-
-## Outro repositório do Camilo
-
-[Checklist de segurança para quem programa com IA](https://github.com/camilocoutinho/checklist-seguranca-vibecoding). Primeiro produto público no GitHub, para quem publica com IA. A nota curta para o aluno de edição está em [`SEGURANCA.md`](SEGURANCA.md).
